@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>장명성 — Communications × AI</title>
+  <style>
+    :root {
+      --bg: #0f0f13;
+      --surface: #1a1a22;
+      --surface2: #22222e;
+      --border: #2e2e3e;
+      --text: #e8e8f0;
+      --text-muted: #7878a0;
+      --accent: #ff6f38;
+      --accent-light: #ff9a70;
+      --green: #4caf82;
+      --font-sans: 'Pretendard', 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-sans);
+      font-size: 15px;
+      line-height: 1.7;
+      padding: 64px 24px 96px;
+    }
+
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    /* ── Header ── */
+    .header {
+      margin-bottom: 72px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent-light);
+      background: rgba(255, 111, 56, 0.1);
+      border: 1px solid rgba(255, 111, 56, 0.25);
+      border-radius: 999px;
+      padding: 4px 12px;
+      margin-bottom: 20px;
+    }
+
+    .header h1 {
+      font-size: 42px;
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      margin-bottom: 14px;
+    }
+
+    .header h1 .accent { color: var(--accent); }
+
+    .header .tagline {
+      font-size: 17px;
+      color: var(--text-muted);
+      line-height: 1.6;
+      max-width: 520px;
+    }
+
+    /* ── Section ── */
+    .section {
+      margin-bottom: 64px;
+    }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* ── About ── */
+    .about-text {
+      font-size: 16px;
+      line-height: 1.8;
+      color: var(--text);
+      margin-bottom: 24px;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tag {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: var(--text-muted);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 4px 10px;
+    }
+
+    /* ── Work cards ── */
+    .work-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    @media (max-width: 580px) {
+      .work-grid { grid-template-columns: 1fr; }
+      .header h1 { font-size: 30px; }
+    }
+
+    .work-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      transition: border-color 0.2s;
+    }
+
+    .work-card:hover {
+      border-color: rgba(255, 111, 56, 0.35);
+    }
+
+    .work-card-eyebrow {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent-light);
+    }
+
+    .work-card h3 {
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 1.4;
+      letter-spacing: -0.02em;
+    }
+
+    .work-card p {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.7;
+      flex: 1;
+    }
+
+    .work-card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 4px;
+    }
+
+    .work-tag {
+      font-size: 11px;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 4px;
+      background: rgba(255, 111, 56, 0.1);
+      color: var(--accent-light);
+      border: 1px solid rgba(255, 111, 56, 0.2);
+    }
+
+    /* ── Tools ── */
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    @media (max-width: 480px) {
+      .tools-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    .tool-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .tool-icon {
+      font-size: 22px;
+      line-height: 1;
+    }
+
+    .tool-name {
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+    }
+
+    .tool-desc {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* ── Footer ── */
+    .footer {
+      border-top: 1px solid var(--border);
+      padding-top: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .footer-name {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .footer-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-link:hover {
+      color: var(--accent-light);
+    }
+
+    .footer-link svg {
+      width: 16px;
+      height: 16px;
+      fill: currentColor;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- Header -->
+    <header class="header">
+      <div class="badge">✦ Portfolio</div>
+      <h1>장명성<br><span class="accent">Communications</span> × AI</h1>
+      <p class="tagline">
+        채용 브랜딩과 콘텐츠 기획을 담당하며,<br>
+        AI 도구를 통해 커뮤니케이션의 새 가능성을 탐색합니다.
+      </p>
+    </header>
+
+    <!-- About -->
+    <section class="section">
+      <div class="section-label">About</div>
+      <p class="about-text">
+        앳홈(AtHome) 커뮤니케이션팀에서 채용 콘텐츠 에디터로 일합니다.
+        구직자의 여정을 분석하고, 브랜드의 언어가 사람들에게 어떻게 닿는지 연구합니다.
+        Claude Code를 비롯한 AI 도구를 적극 활용해 리서치·문서·콘텐츠 제작 흐름을 설계하고 있습니다.
+      </p>
+      <div class="tag-list">
+        <span class="tag">채용 브랜딩</span>
+        <span class="tag">콘텐츠 기획</span>
+        <span class="tag">다채널 전환</span>
+        <span class="tag">AI 워크플로우</span>
+        <span class="tag">PCM · CHV</span>
+        <span class="tag">조직문화 커뮤니케이션</span>
+      </div>
+    </section>
+
+    <!-- Work -->
+    <section class="section">
+      <div class="section-label">Work</div>
+      <div class="work-grid">
+
+        <div class="work-card">
+          <div class="work-card-eyebrow">Framework</div>
+          <h3>PCM·CHV Transform</h3>
+          <p>
+            채용 공고의 커뮤니케이션 품질을 진단하는 프레임워크.
+            Person-Centered Messages(PCM)와 Conversational Human Voice(CHV) 두 축으로
+            텍스트를 분석하고 개선안을 도출합니다.
+          </p>
+          <div class="work-card-tags">
+            <span class="work-tag">채용 커뮤니케이션</span>
+            <span class="work-tag">텍스트 진단</span>
+          </div>
+        </div>
+
+        <div class="work-card">
+          <div class="work-card-eyebrow">Branding · Phase 1</div>
+          <h3>앳홈 채용 브랜딩<br>구직자 접점 진단</h3>
+          <p>
+            앳홈 채용 브랜딩 첫 번째 단계로, 구직자가 브랜드를 만나는
+            모든 접점을 조사하고 개선 기회를 시각화한 리서치 프로젝트.
+          </p>
+          <div class="work-card-tags">
+            <span class="work-tag">리서치</span>
+            <span class="work-tag">여정 지도</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Tools -->
+    <section class="section">
+      <div class="section-label">Tools</div>
+      <div class="tools-grid">
+
+        <div class="tool-card">
+          <div class="tool-icon">⌘</div>
+          <div class="tool-name">Claude Code</div>
+          <div class="tool-desc">AI 에이전트 기반 개발 · 문서 자동화</div>
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-icon">◻</div>
+          <div class="tool-name">Notion</div>
+          <div class="tool-desc">지식 베이스 · 프로젝트 관리</div>
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-icon">◈</div>
+          <div class="tool-name">Asana</div>
+          <div class="tool-desc">팀 업무 · 포트폴리오 추적</div>
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-icon">▦</div>
+          <div class="tool-name">Google Calendar</div>
+          <div class="tool-desc">일정 통합 · 콘텐츠 캘린더</div>
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-icon">❖</div>
+          <div class="tool-name">Figma</div>
+          <div class="tool-desc">비주얼 리서치 · 덱 시각화</div>
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-icon">✦</div>
+          <div class="tool-name">MCP 서버</div>
+          <div class="tool-desc">외부 도구 Claude Code 연동</div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <span class="footer-name">장명성 · @beodle</span>
+      <a class="footer-link" href="https://github.com/beodle" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+        </svg>
+        github.com/beodle
+      </a>
+    </footer>
+
+  </div>
+</body>
+</html>
