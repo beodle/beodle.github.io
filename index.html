@@ -4,18 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>장명성 — Communications × AI</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
   <style>
     :root {
-      --bg: #0f0f13;
-      --surface: #1a1a22;
-      --surface2: #22222e;
-      --border: #2e2e3e;
-      --text: #e8e8f0;
-      --text-muted: #7878a0;
-      --accent: #ff6f38;
-      --accent-light: #ff9a70;
-      --green: #4caf82;
-      --font-sans: 'Pretendard', 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+      --bg:           #FFFFFF;
+      --bg-gray:      #F2F2F0;
+      --bg-cool:      #E3E4E0;
+      --surface:      #F2F2F0;
+      --border:       #0D0D0D;
+      --border-light: #CCCCCC;
+      --text:         #0D0D0D;
+      --text-muted:   #666666;
+      --accent:       #FF5D00;
+      --dark:         #1A1A1A;
+      --font-en:  'Neue Haas Grotesk', 'Helvetica Neue', Arial, sans-serif;
+      --font-ko:  'Pretendard Variable', 'Pretendard', 'Apple SD Gothic Neo', sans-serif;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -23,10 +26,11 @@
     body {
       background: var(--bg);
       color: var(--text);
-      font-family: var(--font-sans);
+      font-family: var(--font-ko);
       font-size: 15px;
-      line-height: 1.7;
+      line-height: 1.6;
       padding: 64px 24px 96px;
+      -webkit-font-smoothing: antialiased;
     }
 
     .container {
@@ -37,6 +41,8 @@
     /* ── Header ── */
     .header {
       margin-bottom: 72px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid var(--border);
     }
 
     .badge {
@@ -44,23 +50,21 @@
       align-items: center;
       gap: 6px;
       font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.1em;
+      font-weight: 700;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: var(--accent-light);
-      background: rgba(255, 111, 56, 0.1);
-      border: 1px solid rgba(255, 111, 56, 0.25);
-      border-radius: 999px;
-      padding: 4px 12px;
+      font-family: var(--font-en);
+      color: var(--accent);
       margin-bottom: 20px;
     }
 
     .header h1 {
-      font-size: 42px;
+      font-size: clamp(32px, 6vw, 56px);
       font-weight: 700;
-      line-height: 1.15;
+      line-height: 1.1;
       letter-spacing: -0.03em;
-      margin-bottom: 14px;
+      margin-bottom: 20px;
+      font-family: var(--font-en);
     }
 
     .header h1 .accent { color: var(--accent); }
@@ -68,7 +72,7 @@
     .header .tagline {
       font-size: 17px;
       color: var(--text-muted);
-      line-height: 1.6;
+      line-height: 1.7;
       max-width: 520px;
     }
 
@@ -82,6 +86,7 @@
       font-weight: 700;
       letter-spacing: 0.12em;
       text-transform: uppercase;
+      font-family: var(--font-en);
       color: var(--text-muted);
       margin-bottom: 24px;
       display: flex;
@@ -93,13 +98,13 @@
       content: '';
       flex: 1;
       height: 1px;
-      background: var(--border);
+      background: var(--border-light);
     }
 
     /* ── About ── */
     .about-text {
       font-size: 16px;
-      line-height: 1.8;
+      line-height: 1.9;
       color: var(--text);
       margin-bottom: 24px;
     }
@@ -114,10 +119,10 @@
       font-size: 12px;
       font-weight: 600;
       letter-spacing: 0.04em;
-      color: var(--text-muted);
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 6px;
+      color: var(--text);
+      background: var(--bg-gray);
+      border: 1px solid var(--border-light);
+      border-radius: 4px;
       padding: 4px 10px;
     }
 
@@ -134,26 +139,28 @@
     }
 
     .work-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 14px;
+      background: var(--bg-gray);
+      border: 1px solid var(--border-light);
+      border-radius: 12px;
       padding: 24px;
       display: flex;
       flex-direction: column;
       gap: 12px;
-      transition: border-color 0.2s;
+      transition: border-color 0.2s, box-shadow 0.2s;
     }
 
     .work-card:hover {
-      border-color: rgba(255, 111, 56, 0.35);
+      border-color: var(--accent);
+      box-shadow: 0 0 0 1px var(--accent);
     }
 
     .work-card-eyebrow {
       font-size: 10px;
       font-weight: 700;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: var(--accent-light);
+      font-family: var(--font-en);
+      color: var(--accent);
     }
 
     .work-card h3 {
@@ -161,6 +168,7 @@
       font-weight: 700;
       line-height: 1.4;
       letter-spacing: -0.02em;
+      color: var(--text);
     }
 
     .work-card p {
@@ -181,10 +189,10 @@
       font-size: 11px;
       font-weight: 600;
       padding: 2px 8px;
-      border-radius: 4px;
-      background: rgba(255, 111, 56, 0.1);
-      color: var(--accent-light);
-      border: 1px solid rgba(255, 111, 56, 0.2);
+      border-radius: 3px;
+      background: rgba(255, 93, 0, 0.08);
+      color: var(--accent);
+      border: 1px solid rgba(255, 93, 0, 0.2);
     }
 
     /* ── Tools ── */
@@ -199,8 +207,8 @@
     }
 
     .tool-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
+      background: var(--bg-gray);
+      border: 1px solid var(--border-light);
       border-radius: 12px;
       padding: 18px;
       display: flex;
@@ -215,8 +223,9 @@
 
     .tool-name {
       font-size: 14px;
-      font-weight: 600;
+      font-weight: 700;
       letter-spacing: -0.01em;
+      color: var(--text);
     }
 
     .tool-desc {
@@ -239,6 +248,7 @@
     .footer-name {
       font-size: 13px;
       color: var(--text-muted);
+      font-family: var(--font-en);
     }
 
     .footer-link {
@@ -247,13 +257,14 @@
       gap: 6px;
       font-size: 13px;
       font-weight: 600;
+      font-family: var(--font-en);
       color: var(--text-muted);
       text-decoration: none;
       transition: color 0.2s;
     }
 
     .footer-link:hover {
-      color: var(--accent-light);
+      color: var(--accent);
     }
 
     .footer-link svg {
