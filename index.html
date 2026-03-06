@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>장명성 — Communications × AI</title>
+  <title>장명성 — Business Storyteller</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
   <style>
     :root {
@@ -195,6 +195,64 @@
       border: 1px solid rgba(255, 93, 0, 0.2);
     }
 
+    /* ── Experience ── */
+    .exp-list {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .exp-item {
+      padding: 24px 0;
+      border-bottom: 1px solid var(--border-light);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .exp-item:first-child {
+      padding-top: 0;
+    }
+
+    .exp-item:last-child {
+      border-bottom: none;
+    }
+
+    .exp-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .exp-company {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      color: var(--accent);
+      font-family: var(--font-en);
+    }
+
+    .exp-period {
+      font-size: 11px;
+      color: var(--text-muted);
+      font-family: var(--font-en);
+      white-space: nowrap;
+    }
+
+    .exp-role {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -0.02em;
+    }
+
+    .exp-desc {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
     /* ── Tools ── */
     .tools-grid {
       display: grid;
@@ -280,10 +338,11 @@
     <!-- Header -->
     <header class="header">
       <div class="badge">✦ Portfolio</div>
-      <h1>장명성<br><span class="accent">Communications</span> × AI</h1>
+      <h1>장명성<br><span class="accent">Business Storyteller</span></h1>
+      <p style="font-size:13px;color:var(--text-muted);font-family:var(--font-en);margin-bottom:16px;letter-spacing:0.04em;">Employer Branding · Internal Communication</p>
       <p class="tagline">
-        채용 브랜딩과 콘텐츠 기획을 담당하며,<br>
-        AI 도구를 통해 커뮤니케이션의 새 가능성을 탐색합니다.
+        조직의 원칙을 말이 되게, 실천할 수 있게 정리합니다.<br>
+        서로를 이해하고 몰입하게 만드는 커뮤니케이션을 만듭니다.
       </p>
     </header>
 
@@ -292,16 +351,70 @@
       <div class="section-label">About</div>
       <p class="about-text">
         앳홈(AtHome) 커뮤니케이션팀에서 채용 콘텐츠 에디터로 일합니다.
-        구직자의 여정을 분석하고, 브랜드의 언어가 사람들에게 어떻게 닿는지 연구합니다.
-        Claude Code를 비롯한 AI 도구를 적극 활용해 리서치·문서·콘텐츠 제작 흐름을 설계하고 있습니다.
+        조직의 이야기를 스토리로 만들고, 사람들이 조직을 이해하고 몰입하게 만드는
+        커뮤니케이션을 설계합니다. Claude Code를 비롯한 AI 도구로 콘텐츠 제작과
+        업무 자동화를 끊임없이 실험합니다.
       </p>
       <div class="tag-list">
-        <span class="tag">채용 브랜딩</span>
-        <span class="tag">콘텐츠 기획</span>
-        <span class="tag">다채널 전환</span>
-        <span class="tag">AI 워크플로우</span>
-        <span class="tag">PCM · CHV</span>
         <span class="tag">조직문화 커뮤니케이션</span>
+        <span class="tag">브랜딩 콘텐츠</span>
+        <span class="tag">채용 브랜딩</span>
+        <span class="tag">AI 워크플로우</span>
+        <span class="tag">자동화와 효율화</span>
+        <span class="tag">PCM · CHV</span>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section class="section">
+      <div class="section-label">Experience</div>
+      <div class="exp-list">
+
+        <div class="exp-item">
+          <div class="exp-meta">
+            <span class="exp-company">앳홈</span>
+            <span class="exp-period">2026.02 — 현재</span>
+          </div>
+          <div class="exp-role">채용 콘텐츠 에디터</div>
+          <p class="exp-desc">기업의 언어가 꼭 맞는 사람에게 닿도록 설계합니다. 채용 커뮤니케이션 체계를 수립하고, 이를 기반으로 콘텐츠 제작까지 직접 하고 있습니다. 정확한 언어가 정확한 사람을 부른다는 믿음으로 일합니다.</p>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-meta">
+            <span class="exp-company">애프터모멘트</span>
+            <span class="exp-period">2025.05 — 2025.10 · 6개월</span>
+          </div>
+          <div class="exp-role">프로젝트 리드</div>
+          <p class="exp-desc">컬처덱 프로젝트 리드로서 기업의 문화를 구조화하고 스토리로 풀어냈습니다. 워크숍, FGI, 인터뷰를 기획·운영하며 핵심 메시지를 도출하고, 각 기업 맞춤형 컬처덱과 참여형 프로그램을 설계했습니다.</p>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-meta">
+            <span class="exp-company">아이헤이트플라잉버그스</span>
+            <span class="exp-period">2021.08 — 2025.02 · 3년 7개월</span>
+          </div>
+          <div class="exp-role">Employee Experience Manager (Team Lead)</div>
+          <p class="exp-desc">채용 브랜딩 콘텐츠 제작과 조직문화 내재화 프로그램을 기획·실행했습니다. 팀 블로그와 사내 뉴스레터를 구축하고 운영했으며, 슬랙 자동화 도구를 활용해 온보딩 프로세스와 업무 효율을 개선했습니다.</p>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-meta">
+            <span class="exp-company">잡플래닛</span>
+            <span class="exp-period">2020.06 — 2021.08 · 1년 3개월</span>
+          </div>
+          <div class="exp-role">에디터 · 컴퍼니 타임스</div>
+          <p class="exp-desc">스타트업부터 중견기업까지 다양한 기업의 조직문화, 사업 모델, 경영 전략을 분석하고 기사화했습니다. 번개장터, 와디즈 등 주요 기업 리더들과의 인터뷰를 진행했습니다.</p>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-meta">
+            <span class="exp-company">뉴스앤조이</span>
+            <span class="exp-period">2018.07 — 2020.06 · 2년</span>
+          </div>
+          <div class="exp-role">기자</div>
+          <p class="exp-desc">문화, 교육, 인권, 노동 이슈를 중심으로 취재와 보도를 진행했습니다. 심층 분석 기사, 인터뷰, 현장 취재 영상 콘텐츠까지 폭넓게 제작했습니다.</p>
+        </div>
+
       </div>
     </section>
 
@@ -311,11 +424,63 @@
       <div class="work-grid">
 
         <div class="work-card">
+          <div class="work-card-eyebrow">조직문화</div>
+          <h3>원칙을 실천 언어로</h3>
+          <p>
+            조직의 원칙이 현장에서 실천될 수 있도록 말이 되는 언어로 정리합니다.
+            추상적인 가치를 구체적인 행동 기준으로 번역하는 작업입니다.
+          </p>
+          <div class="work-card-tags">
+            <span class="work-tag">조직문화</span>
+            <span class="work-tag">언어 설계</span>
+          </div>
+        </div>
+
+        <div class="work-card">
+          <div class="work-card-eyebrow">조직문화 프로그램</div>
+          <h3>몰입을 만드는<br>조직문화 프로그램</h3>
+          <p>
+            서로를 이해하고 몰입하게 만드는 조직문화 프로그램을 기획하고 운영합니다.
+            구성원 간 연결을 설계하는 콘텐츠와 경험을 만듭니다.
+          </p>
+          <div class="work-card-tags">
+            <span class="work-tag">프로그램 기획</span>
+            <span class="work-tag">내부 커뮤니케이션</span>
+          </div>
+        </div>
+
+        <div class="work-card">
+          <div class="work-card-eyebrow">브랜딩 콘텐츠</div>
+          <h3>회사의 이야기를<br>스토리로</h3>
+          <p>
+            회사 곳곳의 이야기를 발굴해 외부에 닿는 스토리로 만듭니다.
+            채용 아티클, 인터뷰, 브랜드 콘텐츠 전반을 기획·제작합니다.
+          </p>
+          <div class="work-card-tags">
+            <span class="work-tag">채용 브랜딩</span>
+            <span class="work-tag">스토리텔링</span>
+          </div>
+        </div>
+
+        <div class="work-card">
+          <div class="work-card-eyebrow">자동화 · AI</div>
+          <h3>더 쉽고 편하게,<br>자동화와 효율화</h3>
+          <p>
+            Claude Code를 비롯한 AI 도구로 콘텐츠 제작과 업무 흐름을 자동화합니다.
+            반복 작업을 줄이고 더 중요한 일에 집중할 수 있는 구조를 설계합니다.
+          </p>
+          <div class="work-card-tags">
+            <span class="work-tag">AI 워크플로우</span>
+            <span class="work-tag">Claude Code</span>
+          </div>
+        </div>
+
+        <div class="work-card">
           <div class="work-card-eyebrow">Framework</div>
           <h3>PCM·CHV Transform</h3>
           <p>
             채용 공고의 커뮤니케이션 품질을 진단하는 프레임워크.
-            Person-Centered Messages(PCM)와 Conversational Human Voice(CHV) 두 축으로
+            Person-Centered Messages와 Conversational Human Voice 두 축으로
             텍스트를 분석하고 개선안을 도출합니다.
           </p>
           <div class="work-card-tags">
@@ -325,15 +490,15 @@
         </div>
 
         <div class="work-card">
-          <div class="work-card-eyebrow">Branding · Phase 1</div>
-          <h3>앳홈 채용 브랜딩<br>구직자 접점 진단</h3>
+          <div class="work-card-eyebrow">스터디 · 기고</div>
+          <h3>배우고 기록하고<br>공유합니다</h3>
           <p>
-            앳홈 채용 브랜딩 첫 번째 단계로, 구직자가 브랜드를 만나는
-            모든 접점을 조사하고 개선 기회를 시각화한 리서치 프로젝트.
+            업무와 관련된 것이라면 폭넓게 경험하고 공유합니다.
+            브런치 기고와 스터디 활동을 통해 생각을 언어로 정리합니다.
           </p>
           <div class="work-card-tags">
-            <span class="work-tag">리서치</span>
-            <span class="work-tag">여정 지도</span>
+            <span class="work-tag">브런치</span>
+            <span class="work-tag">기록</span>
           </div>
         </div>
 
@@ -386,13 +551,18 @@
 
     <!-- Footer -->
     <footer class="footer">
-      <span class="footer-name">장명성 · @beodle</span>
-      <a class="footer-link" href="https://github.com/beodle" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
-        </svg>
-        github.com/beodle
-      </a>
+      <span class="footer-name">장명성 · Jang Myoungsung</span>
+      <div style="display:flex;gap:16px;flex-wrap:wrap;">
+        <a class="footer-link" href="https://brunch.co.kr/@dpxadonai" target="_blank" rel="noopener">
+          Brunch
+        </a>
+        <a class="footer-link" href="https://linkedin.com/in/thinksung" target="_blank" rel="noopener">
+          LinkedIn
+        </a>
+        <a class="footer-link" href="https://github.com/beodle" target="_blank" rel="noopener">
+          GitHub
+        </a>
+      </div>
     </footer>
 
   </div>
