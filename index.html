@@ -291,6 +291,47 @@
       line-height: 1.5;
     }
 
+    /* ── Side Project ── */
+    .side-card {
+      background: var(--bg-gray);
+      border: 1px solid var(--border-light);
+      border-radius: 12px;
+      padding: 24px;
+    }
+
+    .side-card-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .side-links {
+      display: flex;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+
+    .side-link {
+      font-size: 12px;
+      font-weight: 700;
+      font-family: var(--font-en);
+      letter-spacing: 0.04em;
+      color: var(--text);
+      text-decoration: none;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 6px 14px;
+      transition: background 0.15s, color 0.15s;
+    }
+
+    .side-link:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+    }
+
     /* ── Footer ── */
     .footer {
       border-top: 1px solid var(--border);
@@ -541,6 +582,50 @@
           <div class="tool-desc">외부 도구 Claude Code 연동</div>
         </div>
 
+      </div>
+    </section>
+
+    <!-- Research -->
+    <section class="section">
+      <div class="section-label">Research</div>
+      <div class="exp-list">
+
+        <div class="exp-item">
+          <div class="exp-meta">
+            <span class="exp-company">한국소통학보 게재</span>
+            <span class="exp-period">2026.02</span>
+          </div>
+          <div class="exp-role">구직자의 마음을 움직이는 법</div>
+          <p class="exp-desc">채용 커뮤니케이션의 메시지 특성이 조직 매력도와 지원 의도에 미치는 영향. Person-Centered Message(PCM) 프레임워크를 채용 커뮤니케이션에 적용해 구직자의 반응을 분석한 연구입니다.</p>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-meta">
+            <span class="exp-company">고려대학교 미디어학부 석사학위논문</span>
+            <span class="exp-period"></span>
+          </div>
+          <div class="exp-role">채용 커뮤니케이션과 조직 매력도 연구</div>
+          <p class="exp-desc">채용 공고 텍스트의 언어적 특성이 구직자의 지원 의도에 미치는 영향을 정량·정성 분석으로 규명한 석사 연구.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Side Project -->
+    <section class="section">
+      <div class="section-label">Side Project</div>
+      <div class="side-card">
+        <div class="side-card-inner">
+          <div>
+            <div class="exp-company" style="margin-bottom:8px;">팟캐스트 · 밀린일기</div>
+            <div class="exp-role" style="margin-bottom:10px;">어릴 적 밀린 일기처럼, 쌓아둔 수다를 몰아서</div>
+            <p class="exp-desc">그늘과 버들이 진행하는 팟캐스트. 일상, 소비, 추억 등 소소한 이야기를 솔직하게 풀어냅니다. 2026년 2월 재정비 후 업데이트 중.</p>
+          </div>
+          <div class="side-links">
+            <a class="side-link" href="https://open.spotify.com/show/5heXt7XGFLJtkcb0FXhdsh" target="_blank" rel="noopener">Spotify</a>
+            <a class="side-link" href="https://litt.ly/milindiary" target="_blank" rel="noopener">모든 링크</a>
+          </div>
+        </div>
       </div>
     </section>
 
